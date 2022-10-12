@@ -1,0 +1,3 @@
+version=3
+opts=filenamemangle=s/.+\/v?(\d\S*)\.tar\.gz/lua-cliargs-$1\.tar\.gz/ \
+  https://github.com/amireh/lua_cliargs/tags .*/v?(\d\S*)\.tar\.gz

@@ -1,0 +1,28 @@
+Source: lua-cliargs
+Section: interpreters
+Priority: optional
+Maintainer: Jason Pleau <jason@jpleau.ca>
+Build-Depends: debhelper (>= 11),
+               dh-lua,
+               lua-busted <!nocheck>,
+               lua-dkjson,
+               lua-inifile,
+               lua-yaml
+Standards-Version: 4.1.3
+Homepage: https://github.com/amireh/lua_cliargs/
+Vcs-Git: https://salsa.debian.org/lua-team/lua-cliargs
+Vcs-Browser: https://salsa.debian.org/lua-team/lua-cliargs
+
+Package: lua-cliargs
+Architecture: all
+Depends: ${misc:Depends},
+         lua-dkjson,
+         lua-inifile,
+         lua-yaml
+Provides: ${lua:Provides}
+XB-Lua-Versions: ${lua:Versions}
+Description: command-line argument parsing module for Lua
+ This module adds support for accepting CLI arguments easily using multiple
+ notations and argument types.
+ .
+ cliargs allows you to define required, optional, and flag arguments.

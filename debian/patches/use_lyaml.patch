@@ -1,0 +1,24 @@
+Description: use lyaml instead of yaml
+ Debian already provides a yaml module for Lua. However it is exported
+ as 'lyaml' and not 'yaml'
+Author: Jason Pleau <jason@jpleau.ca>
+--- a/src/cliargs/config_loader.lua
++++ b/src/cliargs/config_loader.lua
+@@ -120,7 +120,7 @@
+   --- [1] http://doc.lubyk.org/yaml.html
+   from_yaml = function(filepath)
+     local src, config, _, err
+-    local yaml = require 'yaml'
++    local lyaml = require 'lyaml'
+ 
+     src, err = read_file(filepath)
+ 
+@@ -128,7 +128,7 @@
+       return nil, err
+     end
+ 
+-    config, err = yaml.load(src)
++    config, err = lyaml.load(src)
+ 
+     if not config and err then
+       return nil, err

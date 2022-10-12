@@ -1,0 +1,9 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@ --buildsystem=lua --with lua
+
+override_dh_installexamples:
+	dh_installexamples
+	chmod -x debian/lua-cliargs/usr/share/doc/lua-cliargs/examples/00_general.lua
+
